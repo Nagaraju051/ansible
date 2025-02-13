@@ -2,12 +2,12 @@
   hosts: local
   connection: local
   vars: # PLAY level variables
-     GREET: "PLAY"
+    GREET: "PLAY"
   vars_files:
      - course.yaml
   vars_prompt:
    - name: GREET
-  prompt: Enter the value
+     prompt: Enter the value
   private: false
   tasks:
   - name: print the variable
