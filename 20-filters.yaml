@@ -4,13 +4,13 @@
   tasks:
   - name: handle undefine variable
     ansible.builtin.debug:
-      msg: "Hello {{ person | default('Ramesh')}}"
+      msg: "Hello {{ person | default('Ramesh') }}"
 
   - name: convert string to list
     vars:
-      fruits: "apple, banana, orange"  #string
+      fruits: "apple, banana, orange" #String
     ansible.builtin.debug:
-      msg: "fruits are: {{ fruits | split(',') }}"
+      msg: "Fruits are: {{ fruits | split(',') }}"
 
 
   - name: convert map into list
@@ -32,6 +32,8 @@
       msg: "Course info: {{ course | items2dict }}"
 
   - name: convert upper to lower
+    tags:
+    - uppertolower
     vars:
       name: "Nagaraju K"
     ansible.builtin.debug:
@@ -51,6 +53,6 @@
 
   - name: check ipaddress is valid or not
     vars:
-      ip: "2568.255.245.256"
+      ip: "192.168.1.1"
     ansible.builtin.debug:
       msg: "{{ ip | ansible.utils.ipaddr }}"
