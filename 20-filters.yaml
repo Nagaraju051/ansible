@@ -47,7 +47,7 @@
     vars:
       numbers: [1,30,57,87,98,46845]
     ansible.builtin.debug:
-      msg: "Min is: {{ number | min }}, max is: {{ number | max }}"
+      msg: "min is: {{ number | min }}, max is: {{ number | max }}"
 
   - name: check ipaddress is valid or not
     vars:
